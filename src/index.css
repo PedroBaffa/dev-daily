@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-950 text-slate-50 antialiased;
+  /* Gradiente Azul Escuro Profundo */
+  background-image: radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 80%);
+  min-height: 100vh;
+}
+
+/* Utilitário de Glassmorphism Reutilizável */
+.glass {
+  @apply bg-slate-900/40 backdrop-blur-md border border-white/10 shadow-xl;
+}
+
+.glass-hover {
+  @apply hover:bg-slate-800/60 transition-all duration-300;
+}
+
+/* Scroll suave para navegação na mesma página */
+html {
+  scroll-behavior: smooth;
+}
