@@ -5,14 +5,30 @@ export default {
     extend: {
       colors: {
         brand: {
-          blue: "#0066FF", // Azul vibrante do logo Dev Daily
-          dark: "#020617", // Fundo super escuro (Slate 950)
-          grey: "#94A3B8", // Cinza do texto (Slate 400)
+          blue: "#0066FF",
+          dark: "#020617",
+          grey: "#94A3B8",
         },
       },
       fontFamily: {
-        squeeze: ['"Oswald"', "sans-serif"], // Fonte para Títulos
-        deco: ['"Outfit"', "sans-serif"], // Fonte para Textos
+        squeeze: ['"Oswald"', "sans-serif"],
+        deco: ['"Outfit"', "sans-serif"],
+      },
+      animation: {
+        fall: "fall linear infinite",
+      },
+      keyframes: {
+        fall: {
+          "0%": {
+            transform: "translateY(-20vh) translateX(-10px) rotate(0deg)",
+            opacity: "0",
+          },
+          "10%": { opacity: "0.4" },
+          "100%": {
+            transform: "translateY(120vh) translateX(10px) rotate(360deg)",
+            opacity: "0",
+          },
+        },
       },
     },
   },

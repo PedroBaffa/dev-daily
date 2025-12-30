@@ -1,73 +1,102 @@
-# React + TypeScript + Vite
+# Dev Daily 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Dev Daily** is a simple, modern front-end project built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**. The app includes a pages structure (Home and Classify) and uses **React Router** for navigation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚡ Overview
 
-## React Compiler
+- **Technologies:** React, TypeScript, Vite, Tailwind CSS, React Router
+- **Main scripts:** `npm run dev`, `npm run build`, `npm run preview`, `npm run lint`
+- **Purpose:** a lightweight starter for small projects, experiments, and prototypes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧭 Project structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Key files and folders:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- `index.html` - main HTML file
+- `src/` - source code
+  - `main.tsx` - app bootstrap
+  - `App.tsx` - routing and layout components
+  - `HomePage.tsx` - home page (`/`)
+  - `ClassifyPage.tsx` - classify page (`/classify`)
+  - `assets/` - images and static resources
+  - `index.css` / `App.css` - global styles
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Requirements
+
+- Node.js (v18+) recommended
+- npm (or yarn)
+
+---
+
+## 🚀 Local development
+
+1. Install dependencies:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Run in development mode (Vite):
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Open `http://localhost:5173` (or the host/port shown in the terminal).
+
+3. Build for production:
+
+```bash
+npm run build
+```
+
+4. Preview build:
+
+```bash
+npm run preview
+```
+
+---
+
+## 🧪 Lint
+
+Run lint with:
+
+```bash
+npm run lint
+```
+
+---
+
+## 💡 Extensions & ideas
+
+- Add pagination or shared state with Context/Redux
+- Add tests with Vitest / React Testing Library
+- Automate deploys (Vercel, Netlify, GitHub Pages)
+
+---
+
+## 🤝 Contributing
+
+Feel free to open issues or pull requests. Use clear commit messages and describe changes in the PR.
+
+---
+
+## 📄 License
+
+Pick an appropriate license (e.g., MIT) by adding a `LICENSE` file to the repository.
+
+---
+
+If you want, I can:
+- add badges (build, license, repo size)
+- translate the README to Portuguese
+- create a more detailed `CONTRIBUTING.md`
+
+Tell me which option you'd like me to do next! ✨
