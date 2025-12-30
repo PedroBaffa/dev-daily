@@ -5,18 +5,40 @@ import {
   Zap,
   Menu,
   X,
-  ChevronRight,
   LayoutDashboard,
   ArrowRight,
-  Cpu,
   Github,
   Linkedin,
   Terminal,
   Database,
   Braces,
-  ExternalLink,
   Layers,
 } from "lucide-react";
+
+const BigHeroLogo = () => {
+  return (
+    <div className="relative group hidden lg:block">
+      <div className="flex items-center gap-6 select-none">
+        <div className="relative animate-gradient-glow">
+          <img
+            src="/logo/logo.svg"
+            alt="Logo Dev Daily"
+            className="w-24 h-24 md:w-60 md:h-60 object-contain"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <span className="font-squeeze font-bold text-5xl md:text-8xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-cyan-400 to-purple-600 animate-gradient-text">
+            DEV DAILY
+          </span>
+          <span className="text-slate-400 text-sm md:text-base font-light tracking-[0.2em] uppercase">
+            Studio
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const FallingMatrix = () => {
   const symbols = [
@@ -52,22 +74,10 @@ const FallingMatrix = () => {
     <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0">
       <style>{`
         @keyframes custom-fall {
-          0% {
-            top: -10%; 
-            opacity: 0;
-            transform: translateY(0);
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            top: 110%;
-            opacity: 0;
-            transform: translateY(20px);
-          }
+          0% { top: -10%; opacity: 0; transform: translateY(0); }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { top: 110%; opacity: 0; transform: translateY(20px); }
         }
       `}</style>
 
@@ -154,6 +164,21 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col font-deco selection:bg-brand-blue selection:text-white bg-brand-dark text-slate-50">
+      <style>{`
+        @keyframes gradient-move {
+          0% { background-position: 0% 50%; filter: drop-shadow(0 0 15px rgba(0, 102, 255, 0.5)); }
+          50% { background-position: 100% 50%; filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.6)); }
+          100% { background-position: 0% 50%; filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.5)); }
+        }
+        .animate-gradient-text {
+          background-size: 200% auto;
+          animation: gradient-move 4s linear infinite;
+        }
+        .animate-gradient-glow {
+          animation: gradient-move 4s linear infinite;
+        }
+      `}</style>
+
       <header className="fixed w-full top-0 z-50 glass border-b border-white/5">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
@@ -246,36 +271,46 @@ function App() {
       <main className="flex-grow pt-24">
         <section
           id="hero"
-          className="relative py-20 lg:py-32 overflow-hidden px-6"
+          className="relative min-h-[90vh] flex items-center overflow-hidden px-6"
         >
           <FallingMatrix />
           <div className="absolute top-0 right-0 -z-10 w-96 h-96 bg-brand-blue/20 rounded-full blur-[120px] opacity-60"></div>
           <div className="absolute bottom-0 left-0 -z-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-[100px] opacity-30"></div>
 
-          <div className="container mx-auto text-center max-w-4xl relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-brand-blue text-xs font-bold uppercase tracking-widest mb-8 font-squeeze backdrop-blur-sm">
-              <Zap className="w-3 h-3" /> Agilidade Universitária
-            </div>
+          <div className="container mx-auto relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="flex flex-col items-start text-left">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-brand-blue text-xs font-bold uppercase tracking-widest mb-8 font-squeeze backdrop-blur-sm">
+                  <Zap className="w-3 h-3" /> Agilidade Universitária
+                </div>
 
-            <h1 className="text-6xl md:text-8xl font-squeeze font-bold text-white mb-6 leading-[0.9] uppercase">
-              Do Código à <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-cyan-400">
-                Solução Real
-              </span>
-            </h1>
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-squeeze font-bold text-white mb-6 leading-[0.9] uppercase">
+                  Do Código à <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-cyan-400 to-purple-600 animate-gradient-text">
+                    Solução Real
+                  </span>
+                </h1>
 
-            <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-              StartUp de desenvolvimento fundado por estudantes. Unimos o rigor
-              acadêmico com a velocidade do mercado.
-            </p>
+                <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-xl leading-relaxed font-light">
+                  StartUp de desenvolvimento fundado por estudantes. Unimos o
+                  rigor acadêmico com a velocidade do mercado.
+                </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="w-full sm:w-auto px-8 py-4 bg-brand-blue hover:bg-blue-600 text-white rounded-lg font-bold text-lg transition-all hover:scale-105 flex items-center justify-center gap-2 font-squeeze tracking-wide shadow-lg shadow-brand-blue/25">
-                CONHECER PROJETOS <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="w-full sm:w-auto px-8 py-4 glass text-white hover:bg-white/5 rounded-lg font-bold text-lg border border-white/10 transition-all font-squeeze tracking-wide">
-                FALE CONOSCO
-              </button>
+                <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                  <button className="px-8 py-4 bg-brand-blue hover:bg-blue-600 text-white rounded-lg font-bold text-lg transition-all hover:scale-105 flex items-center justify-center gap-2 font-squeeze tracking-wide shadow-lg shadow-brand-blue/25">
+                    CONHECER PROJETOS <ArrowRight className="w-5 h-5" />
+                  </button>
+                  <button className="px-8 py-4 glass text-white hover:bg-white/5 rounded-lg font-bold text-lg border border-white/10 transition-all font-squeeze tracking-wide">
+                    FALE CONOSCO
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex justify-center lg:justify-center relative">
+                <div className="absolute inset-0 bg-brand-blue/10 blur-[80px] rounded-full -z-10"></div>
+
+                <BigHeroLogo />
+              </div>
             </div>
           </div>
         </section>
@@ -385,7 +420,6 @@ function App() {
                     <p className="text-slate-400 font-light leading-relaxed mb-6 flex-grow">
                       {project.description}
                     </p>
-
                     <a
                       href={project.link}
                       className="inline-flex items-center gap-2 text-white font-bold text-sm tracking-wide uppercase hover:gap-4 transition-all group-hover:text-brand-blue"
