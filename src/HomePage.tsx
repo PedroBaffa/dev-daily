@@ -99,29 +99,29 @@ function App() {
       name: "Pedro Baffa Carvalho",
       role: "Co-Founder & Full-Stack Developer",
       photo: "/pedro.png",
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/pedro-baffa/",
+      github: "https://github.com/PedroBaffa",
     },
     {
       name: "Leonardo Albuquerque Avigro",
       role: "Full Support & Product Manager",
       photo: "/leo.png",
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/leonardo-avigro-842b76225/",
+      github: "https://github.com/LeoAvigro",
     },
     {
       name: "Mateus Simões Marques",
       role: "Database & Front-End Developer",
       photo: "/mateus.png",
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/mateussmarques",
+      github: "https://github.com/mateussmarques",
     },
     {
       name: "Iann Nogueira Schmith",
       role: "Co-Founder & Full-Stack Developer",
       photo: "/iann.png",
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/iannschmith/",
+      github: "https://github.com/IannNS",
     },
   ];
 
@@ -158,12 +158,16 @@ function App() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 group cursor-pointer">
-              <div className="relative flex items-center justify-center w-10 h-10 bg-white/5 rounded-lg border border-white/10 group-hover:border-brand-blue/50 transition-colors">
-                <Cpu className="w-6 h-6 text-brand-blue" />
+              <div className="relative flex items-center w-auto gap-4 group cursor-pointer">
+                <img
+                  src="/logo/logo.png"
+                  alt="Logo Dev Daily"
+                  className="h-10 w-auto object-contain group-hover:scale-110 transition-transform duration-300"
+                />
+                <span className="font-squeeze font-bold text-xl text-slate-200 tracking-wide">
+                  DEV DAILY
+                </span>
               </div>
-              <span className="text-2xl font-squeeze font-bold tracking-wide text-white">
-                Dev <span className="text-brand-blue">Daily</span>
-              </span>
             </div>
 
             <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
@@ -261,8 +265,8 @@ function App() {
             </h1>
 
             <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-              O estúdio de desenvolvimento fundado por cientistas da computação.
-              Unimos o rigor acadêmico com a velocidade do mercado.
+              StartUp de desenvolvimento fundado por estudantes. Unimos o rigor
+              acadêmico com a velocidade do mercado.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -270,7 +274,7 @@ function App() {
                 CONHECER PROJETOS <ArrowRight className="w-5 h-5" />
               </button>
               <button className="w-full sm:w-auto px-8 py-4 glass text-white hover:bg-white/5 rounded-lg font-bold text-lg border border-white/10 transition-all font-squeeze tracking-wide">
-                FALAR COM EXPERT
+                FALE CONOSCO
               </button>
             </div>
           </div>
