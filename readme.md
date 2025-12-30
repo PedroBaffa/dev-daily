@@ -91,12 +91,3 @@ Feel free to open issues or pull requests. Use clear commit messages and describ
 ## 📄 License
 
 Pick an appropriate license (e.g., MIT) by adding a `LICENSE` file to the repository.
-
----
-
-If you want, I can:
-- add badges (build, license, repo size)
-- translate the README to Portuguese
-- create a more detailed `CONTRIBUTING.md`
-
-Tell me which option you'd like me to do next! ✨
