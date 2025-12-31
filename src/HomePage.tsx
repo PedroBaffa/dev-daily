@@ -13,22 +13,26 @@ import {
   Database,
   Braces,
   Layers,
+  GraduationCap,
 } from "lucide-react";
 
+// --- COMPONENTE DO LOGO HERO ---
 const BigHeroLogo = () => {
   return (
     <div className="relative group hidden lg:block">
       <div className="flex items-center gap-6 select-none">
+        {/* 1. O LOGO */}
         <div className="relative animate-gradient-glow">
           <img
             src="/logo/logo.svg"
             alt="Logo Dev Daily"
-            className="w-24 h-24 md:w-60 md:h-60 object-contain"
+            className="w-24 h-24 md:w-64 md:h-64 object-contain"
           />
         </div>
 
+        {/* 2. O TEXTO */}
         <div className="flex flex-col">
-          <span className="font-squeeze font-bold text-5xl md:text-8xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-cyan-400 to-purple-600 animate-gradient-text">
+          <span className="font-squeeze font-bold text-5xl md:text-7xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-cyan-400 to-purple-600 animate-gradient-text">
             DEV DAILY
           </span>
           <span className="text-slate-400 text-sm md:text-base font-light tracking-[0.2em] uppercase">
@@ -40,6 +44,7 @@ const BigHeroLogo = () => {
   );
 };
 
+// --- COMPONENTE MATRIX RAIN ---
 const FallingMatrix = () => {
   const symbols = [
     "{ }",
@@ -104,6 +109,7 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  // --- DADOS ---
   const teamMembers = [
     {
       name: "Pedro Baffa Carvalho",
@@ -164,6 +170,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col font-deco selection:bg-brand-blue selection:text-white bg-brand-dark text-slate-50">
+      {/* ESTILOS GLOBAIS DE ANIMAÇÃO */}
       <style>{`
         @keyframes gradient-move {
           0% { background-position: 0% 50%; filter: drop-shadow(0 0 15px rgba(0, 102, 255, 0.5)); }
@@ -179,6 +186,7 @@ function App() {
         }
       `}</style>
 
+      {/* 1. HEADER */}
       <header className="fixed w-full top-0 z-50 glass border-b border-white/5">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
@@ -231,6 +239,7 @@ function App() {
           </div>
         </div>
 
+        {/* Menu Mobile */}
         {isMenuOpen && (
           <div className="md:hidden absolute w-full glass border-b border-white/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
             <a
@@ -269,6 +278,7 @@ function App() {
       </header>
 
       <main className="flex-grow pt-24">
+        {/* 2. HERO SECTION */}
         <section
           id="hero"
           className="relative min-h-[90vh] flex items-center overflow-hidden px-6"
@@ -305,16 +315,15 @@ function App() {
                   </button>
                 </div>
               </div>
-
               <div className="flex justify-center lg:justify-center relative">
                 <div className="absolute inset-0 bg-brand-blue/10 blur-[80px] rounded-full -z-10"></div>
-
                 <BigHeroLogo />
               </div>
             </div>
           </div>
         </section>
 
+        {/* 3. SOBRE NÓS*/}
         <section id="about" className="py-20 px-6 bg-slate-900/30">
           <div className="container mx-auto">
             <div className="flex flex-col items-center mb-16">
@@ -324,7 +333,27 @@ function App() {
               <h2 className="text-4xl md:text-5xl font-squeeze font-bold text-white uppercase text-center">
                 Mentes por trás do código
               </h2>
-              <div className="w-24 h-1 bg-brand-blue rounded-full mt-6"></div>
+              <div className="w-24 h-1 bg-brand-blue rounded-full mt-6 mb-8"></div>
+              <div className="max-w-3xl text-center glass p-8 rounded-2xl border border-white/5">
+                <div className="flex justify-center mb-4">
+                  <GraduationCap className="w-8 h-8 text-brand-blue" />
+                </div>
+                <p className="text-lg text-slate-300 leading-relaxed font-light">
+                  Somos um coletivo de estudantes de{" "}
+                  <strong className="text-white font-bold">
+                    Análise e Desenvolvimento de Sistemas
+                  </strong>{" "}
+                  da{" "}
+                  <strong className="text-brand-blue font-bold">
+                    Universidade São Judas Tadeu
+                  </strong>
+                  .
+                  <br className="hidden md:block" />
+                  Movidos pelo entusiasmo e pela curiosidade técnica,
+                  transformamos os desafios da sala de aula em soluções digitais
+                  robustas para o mundo real.
+                </p>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -375,6 +404,7 @@ function App() {
           </div>
         </section>
 
+        {/* 4. PROJETOS */}
         <section id="projects" className="py-20 px-6">
           <div className="container mx-auto">
             <div className="flex flex-col items-center mb-16">
@@ -433,6 +463,7 @@ function App() {
           </div>
         </section>
 
+        {/* 5. SERVIÇOS */}
         <section id="services" className="py-20 px-6 bg-slate-950/50">
           <div className="container mx-auto">
             <div className="text-center mb-16">
